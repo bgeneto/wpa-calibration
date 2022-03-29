@@ -2,7 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.ini
+
+# Custom files
+config.ini
+websocket.js
 
 # C extensions
 *.so
