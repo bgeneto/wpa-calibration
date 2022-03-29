@@ -202,7 +202,7 @@ if __name__ == '__main__':
     )
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(web_port)
-    print("INFO: Web server listening on port:", web_port)
+    print("INFO: Web server listening on {}:{}".format(web_ip, web_port))
 
     main_loop = tornado.ioloop.IOLoop().current()
     # adjust the scheduler_interval according to the frames sent by the serial port
@@ -223,4 +223,4 @@ if __name__ == '__main__':
         http_server.stop()
         for handler in handlers:
             handler.aclose()
-        print('INFO: Web server stopped')
+        print('\nINFO: Web server stopped')
