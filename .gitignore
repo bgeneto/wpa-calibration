@@ -6,6 +6,8 @@ __pycache__/
 # Custom files
 config.ini
 websocket.js
+*.old
+*.bkp
 
 # C extensions
 *.so
