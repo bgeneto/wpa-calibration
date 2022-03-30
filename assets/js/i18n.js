@@ -38,7 +38,8 @@ $(function () {
             data: {
               output: 'Pendulum data output',
               input: 'Pendulum data input',
-              output_label: 'Serial port output'
+              output_label: 'Serial port output',
+              button: 'Clear'
             },
             command: {
               label: 'Command',
@@ -60,7 +61,8 @@ $(function () {
             data: {
               output: 'Saída de dados do pêndulo',
               input: 'Entrada de dados do pêndulo',
-              output_label: 'Saída da porta serial'
+              output_label: 'Saída da porta serial',
+              button: 'Limpar'
             },
             command: {
               label: 'Comando',

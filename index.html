@@ -106,7 +106,7 @@
                   <label class="uppercase" data-i18n="data.output_label"></label>
                   <textarea id="received" rows="8"></textarea>
                 </div>
-                <button id="clear" type="button" class="btn btn-warning">Clear</button>
+                <button id="clear" type="button" class="btn btn-warning" data-i18n="data.button"></button>
               </div><!-- end card -->
             </div><!-- end col -->
           </div>
@@ -132,8 +132,7 @@
                   </div>
                   <div class="mb-3">
                     <div class="button-group d-flex justify-content-left flex-wrap">
-                      <button id="cmd_send" type="submit" class="btn btn-primary"
-                        data-i18n="command.button"></button>
+                      <button id="cmd_send" type="submit" class="btn btn-primary" data-i18n="command.button"></button>
                     </div>
                   </div>
                 </div><!-- end card -->
@@ -148,11 +147,23 @@
     <!-- ========== tab components end ========== -->
 
     <!-- ========== footer start =========== -->
+
     <footer class="footer">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 order-last order-md-first">
             <div class="copyright text-center text-md-start">
+              <select name="language" id="languageSwitcher">
+              </select>
+            </div>
+          </div>
+          <!-- end col-->
+          <div class="col-md-6">
+            <div class="
+                terms
+                d-flex
+                justify-content-center justify-content-md-end
+              ">
               <p class="text-sm">
                 Designed and developed by bgeneto using
                 <a href="https://plainadmin.com" rel="nofollow" target="_blank">
@@ -161,23 +172,10 @@
               </p>
             </div>
           </div>
-          <!-- end col-->
-          <div class="col-md-6">
-            <div class="
-                  terms
-                  d-flex
-                  justify-content-center justify-content-md-end
-                ">
-              <div class="select-style-1">
-                <div class="select-position">
-                  <select name="language" id="languageSwitcher">
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- end row -->
-      </div><!-- end container -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
     </footer>
     <!-- ========== footer end =========== -->
 
