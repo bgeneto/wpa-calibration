@@ -1,0 +1,12 @@
+#received {
+    /* height: 400px;
+    border: 1px solid #dedede;
+    overflow-y: scroll;
+    */
+    font-family: monospace;
+    white-space: pre;
+  }
+
+  label.uppercase {
+    text-transform: uppercase;
+  }
