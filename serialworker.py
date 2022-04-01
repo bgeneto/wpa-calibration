@@ -24,7 +24,7 @@ class SerialProcess(multiprocessing.Process):
 
     def read_serial(self):
         try:
-            ret = self.sp.readline().decode().rstrip().replace('\r', '\n')
+            ret = self.sp.readline().decode().rstrip().replace('\r', '<br>')
         except serial.serialutil.SerialException:
             print('ERROR: Serial device disconnected or multiple access on port?')
             print('       Press Ctrl+C to exit')

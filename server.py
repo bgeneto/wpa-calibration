@@ -222,6 +222,6 @@ if __name__ == '__main__':
         sp.join()
         scheduler.stop()
         http_server.stop()
-        for handler in handlers:
-            handler.aclose()
+        #for handler in handlers:
+        #    handler.aclose()
         print('\nINFO: Web server stopped')
