@@ -47,9 +47,9 @@ class IndexHandler(tornado.web.RequestHandler):
         self.render('index.html')
 
 
-class StaticFileHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('websocket.js')
+#class StaticFileHandler(tornado.web.RequestHandler):
+#    def get(self):
+#        self.render('websocket.js')
 
 
 class WebSocketHandler(tornado.websocket.WebSocketHandler):
