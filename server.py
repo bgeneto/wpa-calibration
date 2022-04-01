@@ -6,7 +6,8 @@ by the tides.py (unattended) script in order to calculate the average
 pendulum period, corrected gravitational acceleration etc.
 Author:   b g e n e t o @ g m a i l . c o m
 History:  v1.0.0  Initial release
-          v1.0.1  Configure options via config (inj) file
+          v1.0.1  Configure options via config (ini) file
+          v1.0.2  Using Bootstrap 5 theme
 """
 
 import json
@@ -31,8 +32,8 @@ __email__ = "b g e n e t o @ g m a i l d o t c o m"
 __copyright__ = "Copyright 2022, Bernhard Enders"
 __license__ = "GPL"
 __status__ = "Development"
-__version__ = "1.0.1"
-__date__ = "20220328"
+__version__ = "1.0.2"
+__date__ = "20220331"
 
 
 clients = []
@@ -43,13 +44,11 @@ output_queue = multiprocessing.Queue()
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        print('render html')
         self.render('index.html')
 
 
 class StaticFileHandler(tornado.web.RequestHandler):
     def get(self):
-        print('render js')
         self.render('websocket.js')
 
 
@@ -150,8 +149,9 @@ def get_setting(section, setting):
 
 def setup_ws(web_ip, web_port):
     # template and js files
-    ws_template = os.path.join(script_dir, "websocket.template")
-    ws_file = os.path.join(script_dir, "websocket.js")
+    ws_template = os.path.join(
+        script_dir, "static", "js", "websocket.template")
+    ws_file = os.path.join(script_dir, "static", "js", "websocket.js")
 
     # check if websocket template file (provided) exists
     if not os.path.isfile(ws_template):
@@ -192,13 +192,14 @@ if __name__ == '__main__':
     sp.daemon = True
     sp.start()
     # tornado.options.parse_command_line()
-    handlers = []
+    handlers = [
+        (r"/", IndexHandler),
+        (r"/static/(.*)", tornado.web.StaticFileHandler,
+         {'path':  './static'}),
+        (r"/ws", WebSocketHandler)
+    ]
     app = tornado.web.Application(
-        handlers=[
-            (r"/", IndexHandler),
-            (r"/static/(.*)", tornado.web.StaticFileHandler, {'path':  './'}),
-            (r"/ws", WebSocketHandler)
-        ]
+        handlers=handlers
     )
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(web_port)
