@@ -6,7 +6,7 @@ $(document).ready(function () {
 
   socket.onmessage = function (message) {
     received.append(message.data);
-    received.append('<br>');
+    received.append('&#013;&#010;');
   };
 
   var sendMessage = function (message) {
