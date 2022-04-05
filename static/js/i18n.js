@@ -33,7 +33,7 @@ $(function () {
             },
             intro: {
               title: 'Pendulum Calibration Tool',
-              subtitle: 'Use this tool to send (or receive) data to the connected pendulum'
+              subtitle: 'Use this page to configure pendulum initial parameters'
             },
             promo: {
               title: 'Warning',
@@ -77,7 +77,7 @@ $(function () {
             },
             intro: {
               title: 'Ferramenta para Calibração do Pêndulo',
-              subtitle: 'Utilize esta página para enviar (ou receber) dados para o pêndulo'
+              subtitle: 'Utilize esta página para configurar os parâmetros do pêndulo'
             },
             promo: {
               title: 'Aviso',

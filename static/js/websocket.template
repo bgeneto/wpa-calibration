@@ -34,28 +34,41 @@ $(document).ready(function () {
   async function calibrate(cmd) {
     sendMessage({ 'data': cmd });
     await sleep(1000);
+    console.log(received.val());
   }
 
   $("#cal1_send").click(function (ev) {
     ev.preventDefault();
     let id_string = $('#id_string').val();
-    let cmd_id_string = 'set ID string ' + id_string.trim();
+    if (id_string) {
+      cmd_id_string = 'set ID string ' + id_string.trim();
+      calibrate(cmd_id_string);
+    }
     let max_pos = $('#max_pos').val();
-    let cmd_max_pos = 'set maximum position ' + parseFloat(max_pos.trim());
+    if (max_pos) {
+      cmd_max_pos = 'set maximum position ' + parseFloat(max_pos.trim());
+      calibrate(cmd_max_pos);
+    }
     let vert_pos = $('#vert_pos').val();
-    let cmd_vert_pos = 'set vertical position ' + parseFloat(vert_pos.trim());
+    if (vert_pos) {
+      cmd_vert_pos = 'set vertical position ' + parseFloat(vert_pos.trim());
+      calibrate(cmd_vert_pos);
+    }
     let diameter = $('#diameter').val();
-    let cmd_diameter = 'set sphere diameter ' + parseFloat(diameter.trim());
+    if (diameter) {
+      cmd_diameter = 'set sphere diameter ' + parseFloat(diameter.trim());
+      calibrate(cmd_diameter);
+    }
     let pulley = $('#pulley').val();
-    let cmd_pulley = 'set pulley diameter ' + parseFloat(pulley.trim());
+    if (pulley) {
+      cmd_pulley = 'set pulley diameter ' + parseFloat(pulley.trim());
+      calibrate(cmd_pulley);
+    }
     let length = $('#length').val();
-    let cmd_length = 'set pendulum length ' + parseFloat(length.trim());
-    calibrate(cmd_id_string);
-    calibrate(cmd_max_pos);
-    calibrate(cmd_vert_pos);
-    calibrate(cmd_diameter);
-    calibrate(cmd_pulley);
-    calibrate(cmd_length);
+    if (length) {
+      cmd_length = 'set pendulum length ' + parseFloat(length.trim());
+      calibrate(cmd_length);
+    }
   });
 
 });
