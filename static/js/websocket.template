@@ -26,4 +26,36 @@ $(document).ready(function () {
     received.empty();
   });
 
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  // pendulum calibration commands
+  async function calibrate(cmd) {
+    sendMessage({ 'data': cmd });
+    await sleep(1000);
+  }
+
+  $("#cal1_send").click(function (ev) {
+    ev.preventDefault();
+    let id_string = $('#id_string').val();
+    let cmd_id_string = 'set ID string ' + id_string.trim();
+    let max_pos = $('#max_pos').val();
+    let cmd_max_pos = 'set maximum position ' + parseFloat(max_pos.trim());
+    let vert_pos = $('#vert_pos').val();
+    let cmd_vert_pos = 'set vertical position ' + parseFloat(vert_pos.trim());
+    let diameter = $('#diameter').val();
+    let cmd_diameter = 'set sphere diameter ' + parseFloat(diameter.trim());
+    let pulley = $('#pulley').val();
+    let cmd_pulley = 'set pulley diameter ' + parseFloat(pulley.trim());
+    let length = $('#length').val();
+    let cmd_length = 'set pendulum length ' + parseFloat(length.trim());
+    calibrate(cmd_id_string);
+    calibrate(cmd_max_pos);
+    calibrate(cmd_vert_pos);
+    calibrate(cmd_diameter);
+    calibrate(cmd_pulley);
+    calibrate(cmd_length);
+  });
+
 });

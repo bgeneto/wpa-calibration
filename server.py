@@ -46,6 +46,10 @@ class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('index.html')
 
+class CalHandler(tornado.web.RequestHandler):
+    def get(self):
+        id = str(self.get_arguments("id")[0])
+        self.render('cal%s.html'%id)
 
 #class StaticFileHandler(tornado.web.RequestHandler):
 #    def get(self):
@@ -194,6 +198,7 @@ if __name__ == '__main__':
     # tornado.options.parse_command_line()
     handlers = [
         (r"/", IndexHandler),
+        (r"/cal", CalHandler),
         (r"/static/(.*)", tornado.web.StaticFileHandler,
          {'path':  './static'}),
         (r"/ws", WebSocketHandler)

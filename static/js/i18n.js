@@ -35,6 +35,10 @@ $(function () {
               title: 'Pendulum Calibration Tool',
               subtitle: 'Use this tool to send (or receive) data to the connected pendulum'
             },
+            promo: {
+              title: 'Warning',
+              text: 'No warnings today'
+            },
             data: {
               output: 'Pendulum data output',
               input: 'Pendulum data input',
@@ -42,9 +46,26 @@ $(function () {
               button: 'Clear'
             },
             command: {
-              label: 'Command',
+              label: 'Send Command',
               placeholder: 'Type your command here...',
               button: 'Send'
+            },
+            menu: {
+              pages: 'Pages',
+              index: 'Serial Port I/O',
+              cal1: 'Calibration 1',
+              cal2: 'Calibration 2'
+            },
+            cal: {
+              title1: 'Pendulum Calibration (step 1)',
+              id_string: 'Pendulum Name',
+              max_pos: 'Maximum position',
+              vert_pos: 'Vertical position',
+              diameter: 'Sphere diameter',
+              pulley: 'Pulley diameter',
+              length: 'Pendulum length',
+              origin: 'Origin position',
+              photodiode: 'Photodiode position'
             }
           }
         },
@@ -58,6 +79,10 @@ $(function () {
               title: 'Ferramenta para Calibração do Pêndulo',
               subtitle: 'Utilize esta página para enviar (ou receber) dados para o pêndulo'
             },
+            promo: {
+              title: 'Aviso',
+              text: 'Estamos 0 dias sem acidentes'
+            },
             data: {
               output: 'Saída de dados do pêndulo',
               input: 'Entrada de dados do pêndulo',
@@ -65,9 +90,26 @@ $(function () {
               button: 'Limpar'
             },
             command: {
-              label: 'Comando',
+              label: 'Enviar Comando',
               placeholder: 'Digite seu comando aqui...',
               button: 'Enviar'
+            },
+            menu: {
+              pages: 'Páginas',
+              index: 'Porta Serial E/S',
+              cal1: 'Calibração 1',
+              cal2: 'Calibração 2'
+            },
+            cal: {
+              title1: 'Calibração do Pêndulo (passo 1)',
+              id_string: 'Nome do pêndulo',
+              max_pos: 'Posição máxima',
+              vert_pos: 'Posição vertical',
+              diameter: 'Diâmetro da esfera',
+              pulley: 'Pulley diameter',
+              length: 'Comprimento do pêndulo',
+              origin: 'Posição na origem',
+              photodiode: 'Posição do fotodiodo'
             }
           }
         }
