@@ -108,7 +108,7 @@
           <span data-i18n="command.ok"></span>
         </div>
 
-        <form id="sent" class="row g-2">
+        <form id="form-sent" class="row g-2">
           <textarea id="received" hidden></textarea>
           <div class="row">
             <div class="col-lg-6">
@@ -157,6 +157,7 @@
               <div class="mb-3">
                 <div class="button-group d-flex justify-content-left flex-wrap">
                   <button id="cal1_send" type="submit" class="btn btn-primary" data-i18n="command.button"></button>
+                  <button id="cal1_clear" type="button" class="btn btn-warning" data-i18n="data.button"></button>
                 </div>
               </div>
             </div>
@@ -247,9 +248,14 @@
       });
     });
     // init tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+    $('#cal1_clear').click(function () {
+      $('#form-sent').reset();
+      $("#alert-msg").attr("style", "display:none");
+      $("#ok-msg").attr("style", "display:none");
     });
   });
 </script>
