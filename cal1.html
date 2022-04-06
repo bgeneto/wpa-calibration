@@ -184,6 +184,24 @@
     <!-- ========== footer end =========== -->
 
   </main>
+  <!-- Modal -->
+  <div id="modalContent"></div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Command Sent</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Commands sent to PIC. Please check if all operations succeeded!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========= All Javascript files ======== -->
   <script src="static/js/bootstrap.bundle.min.js"></script>
@@ -200,9 +218,14 @@
 
 <script>
   $(document).ready(function () {
-    $('label').each(function (index) {
-      link = $(this).attr('for');
-      $(this).append('<span>&nbsp;<a target="_blank" href="static/help/' + link + '.html"><i class="lni lni-question-circle"></i></a></span>');
+    $("#modalContent").load("static/help/id_string.html");
+    $('label').each(function () {
+      let link = $(this).attr('for');
+      //$(this).append('<span>&nbsp;<a target="_blank" href="static/help/' + link + '.html"><i class="lni lni-question-circle"></i></a></span>');
+      $(this).append('<span>&nbsp;<a href="#" class="amodal"><i class="lni lni-question-circle"></i></a></span>');
+      $("a.amodal").click(function () {
+        $('#' + link + '_modal').modal('show');
+      });
     });
   });
 </script>

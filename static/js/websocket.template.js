@@ -19,11 +19,11 @@ $(document).ready(function () {
     ev.preventDefault();
     var cmd = $('#cmd_value').val();
     sendMessage({ 'data': cmd });
-    $('#cmd_value').val("");
+    $('#cmd_value').val('');
   });
 
   $('#clear').click(function () {
-    received.empty();
+    received.val('');
   });
 
   function asleep(ms) {
@@ -100,7 +100,7 @@ $(document).ready(function () {
       cmd = 'set pendulum length ' + parseFloat(length.trim());
       calibrate(cmd, 'pendulum length');
     }
-
+    $('#exampleModal').modal('show');
   });
 
 });
