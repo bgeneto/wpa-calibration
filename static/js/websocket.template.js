@@ -43,9 +43,10 @@ $(document).ready(function () {
   async function calibrate(cmd, str) {
     sendMessage({ 'data': cmd });
     let regex = new RegExp(str.toUpperCase().trim() + ".+OK$", "m");
+    console.log(regex);
     let data = received.val();
     let timeout = 0;
-    while (data.length < 200 && timeout < 10) {
+    while (timeout < 10) {
       timeout += 1;
       if (regex.test(data)) {
         received.val('');
@@ -54,7 +55,9 @@ $(document).ready(function () {
       await asleep(500);
       data = received.val();
     }
-    err_msg += cmd + 'FAILED!';
+    err_msg += '•' + cmd + ' command FAILED!<br>';
+    $( "#alert-msg" ).html(err_msg);
+    $( "#alert-msg" ).attr("style", "display:block");
     console.log(err_msg);
     return false;
   }
