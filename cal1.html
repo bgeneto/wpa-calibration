@@ -103,9 +103,13 @@
         </div>
 
         <form id="sent" class="row g-2">
+          <textarea id="received" hidden></textarea>
           <div class="row">
             <div class="col-lg-12">
               <div class="card-style mb-30">
+                <div class="alert alert-danger" role="alert" style="display: none">
+                  A simple danger alert—check it out!
+                </div>
                 <div class="input-style-1">
                   <label for="id_string" class="uppercase" data-i18n="cal.id_string"></label>
                   <input type="text" maxlength="31" id="id_string" data-i18n="[placeholder]cal.id_string" />

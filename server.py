@@ -46,12 +46,13 @@ class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('index.html')
 
+
 class CalHandler(tornado.web.RequestHandler):
     def get(self):
         id = str(self.get_arguments("id")[0])
-        self.render('cal%s.html'%id)
+        self.render('cal%s.html' % id)
 
-#class StaticFileHandler(tornado.web.RequestHandler):
+# class StaticFileHandler(tornado.web.RequestHandler):
 #    def get(self):
 #        self.render('websocket.js')
 
@@ -154,7 +155,7 @@ def get_setting(section, setting):
 def setup_ws(web_ip, web_port):
     # template and js files
     ws_template = os.path.join(
-        script_dir, "static", "js", "websocket.template")
+        script_dir, "static", "js", "websocket.template.js")
     ws_file = os.path.join(script_dir, "static", "js", "websocket.js")
 
     # check if websocket template file (provided) exists
@@ -227,6 +228,6 @@ if __name__ == '__main__':
         sp.join()
         scheduler.stop()
         http_server.stop()
-        #for handler in handlers:
+        # for handler in handlers:
         #    handler.aclose()
         print('\nINFO: Web server stopped')
