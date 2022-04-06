@@ -99,13 +99,16 @@
           </div>
         </div>
 
+        <div id="alert-msg" class="alert alert-danger" role="alert" style="display: none">
+          <span data-i18n="command.err"></span><br>
+          <span id="alert-msg-text"></span>
+        </div>
+
         <form id="sent" class="row g-2">
           <textarea id="received" hidden></textarea>
           <div class="row">
             <div class="col-lg-6">
               <div class="card-style mb-30">
-                <div id="alert-msg" class="alert alert-danger" role="alert" style="display: none">
-                </div>
                 <div class="input-style-1">
                   <label for="id_string" class="uppercase" data-i18n="cal.id_string"></label>
                   <input type="text" maxlength="31" id="id_string" data-i18n="[placeholder]cal.id_string" />

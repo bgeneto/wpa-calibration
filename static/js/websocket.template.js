@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var err_msg = '<span data-i18n="command.err"></span><br>';
+  var err_msg = '';
   var received = $('#received');
   var socket = new WebSocket("ws://<web_ip>:<web_port>/ws");
 
@@ -41,6 +41,8 @@ $(document).ready(function () {
 
   // pendulum calibration commands
   async function calibrate(cmd, str) {
+    wt = 500; // wait time in ms
+    await asleep(wt);
     sendMessage({ 'data': cmd });
     let regex = new RegExp(str.toUpperCase().trim() + ".+OK$", "m");
     console.log(regex);
@@ -52,12 +54,12 @@ $(document).ready(function () {
         received.val('');
         return true;
       }
-      await asleep(500);
+      await asleep(wt);
       data = received.val();
     }
     err_msg += '•' + cmd + '<br>';
-    $( "#alert-msg" ).html(err_msg);
-    $( "#alert-msg" ).attr("style", "display:block");
+    $("#alert-msg-text").html(err_msg);
+    $("#alert-msg").attr("style", "display:block");
     console.log(err_msg);
     return false;
   }
