@@ -103,4 +103,9 @@ $(document).ready(function () {
     $('#exampleModal').modal('show');
   });
 
+  // goto origin
+  $("#goto_origin").click(function (ev) {
+    ev.preventDefault();
+    sendMessage({ 'data': 'go to origin 2 2' });
+  });
 });

@@ -106,7 +106,7 @@ $(function () {
               max_pos: 'Posição máxima',
               vert_pos: 'Posição vertical',
               diameter: 'Diâmetro da esfera',
-              pulley: 'Pulley diameter',
+              pulley: 'Diâmetro da polia',
               length: 'Comprimento do pêndulo',
               ori_pos: 'Posição na origem',
               photo_pos: 'Posição do fotodiodo'
