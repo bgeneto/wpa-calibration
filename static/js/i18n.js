@@ -50,6 +50,7 @@ $(function () {
               placeholder: 'Type your command here...',
               button: 'Send',
               err: 'The following commands failed, please try again:',
+              ok: 'All commands sent successfully!',
               sent: 'All commands sent to PIC. Please confirm that all operations succeeded!'
             },
             menu: {
@@ -96,6 +97,7 @@ $(function () {
               placeholder: 'Digite seu comando aqui...',
               button: 'Enviar',
               err: 'Os seguintes comandos falharam, tente novamente:',
+              ok: 'Todos os comandos foram registrados com sucesso!',
               sent: 'Todos os comandos foram enviados. Favor confirmar que todas as operações foram realizadas com sucesso!'
             },
             menu: {

@@ -52,22 +52,21 @@ $(document).ready(function () {
       if (regex.test(data)) {
         ok = true;
         break;
-      } else {
-        console.log(regex);
-        console.log(data);
       }
       await asleep(wt);
       data = received.val();
     }
     if (!ok) {
       err_msg += '• ' + cmd + '<br>';
+      $("#ok-msg").attr("style", "display:none");
       $("#alert-msg-text").html(err_msg);
       $("#alert-msg").attr("style", "display:block");
     } else {
       $("#alert-msg-text").html(err_msg);
       $("#alert-msg").attr("style", "display:none");
+      $("#ok-msg").attr("style", "display:block");
     }
-    console.log(err_msg);
+
   }
 
   $("#cal1_send").click(function (ev) {
@@ -81,56 +80,56 @@ $(document).ready(function () {
       cmd = 'set ID string ' + id_string.trim();
       calibrate(cmd, 'ID string');
     }
-    sleep(200);
+
 
     let max_pos = $('#max_pos').val();
     if (max_pos) {
       cmd = 'set maximum position ' + parseFloat(max_pos.trim());
+      sleep(200);
       calibrate(cmd, 'maximum position');
     }
-    sleep(200);
 
     let vert_pos = $('#vert_pos').val();
     if (vert_pos) {
       cmd = 'set vertical position ' + parseFloat(vert_pos.trim());
+      sleep(200);
       calibrate(cmd, 'vertical position');
     }
-    sleep(200);
 
     let diameter = $('#diameter').val();
     if (diameter) {
       cmd = 'set sphere diameter ' + parseFloat(diameter.trim());
+      sleep(200);
       calibrate(cmd, 'sphere diameter');
     }
-    sleep(200);
 
     let pulley = $('#pulley').val();
     if (pulley) {
       cmd = 'set pulley diameter ' + parseFloat(pulley.trim());
+      sleep(200);
       calibrate(cmd, 'pulley diameter');
     }
-    sleep(200);
 
     let length = $('#length').val();
     if (length) {
       cmd = 'set pendulum length ' + parseFloat(length.trim());
+      sleep(200);
       calibrate(cmd, 'pendulum length');
     }
-    sleep(200);
 
     let photo_pos = $('#photo_pos').val();
     if (photo_pos) {
       cmd = 'set photodiode position ' + parseFloat(photo_pos.trim());
+      sleep(200);
       calibrate(cmd, 'photodiode position');
     }
-    sleep(200);
 
     let ori_pos = $('#ori_pos').val();
     if (ori_pos) {
       cmd = 'set origin position ' + parseFloat(ori_pos.trim());
+      sleep(200);
       calibrate(cmd, 'origin position');
     }
-    sleep(200);
 
     $('#cmdModal').modal('show');
 
