@@ -53,19 +53,19 @@ $(function () {
             menu: {
               pages: 'Pages',
               index: 'Serial Port I/O',
-              cal1: 'Calibration 1',
+              cal1: 'Calibration',
               cal2: 'Calibration 2'
             },
             cal: {
-              title1: 'Pendulum Calibration (step 1)',
+              title1: 'Pendulum Calibration',
               id_string: 'Pendulum Name',
               max_pos: 'Maximum position',
               vert_pos: 'Vertical position',
               diameter: 'Sphere diameter',
               pulley: 'Pulley diameter',
               length: 'Pendulum length',
-              origin: 'Origin position',
-              photodiode: 'Photodiode position'
+              ori_pos: 'Origin position',
+              photo_pos: 'Photodiode position'
             }
           }
         },
@@ -97,19 +97,19 @@ $(function () {
             menu: {
               pages: 'Páginas',
               index: 'Porta Serial E/S',
-              cal1: 'Calibração 1',
+              cal1: 'Calibração',
               cal2: 'Calibração 2'
             },
             cal: {
-              title1: 'Calibração do Pêndulo (passo 1)',
+              title1: 'Calibração do Pêndulo',
               id_string: 'Nome do pêndulo',
               max_pos: 'Posição máxima',
               vert_pos: 'Posição vertical',
               diameter: 'Diâmetro da esfera',
               pulley: 'Pulley diameter',
               length: 'Comprimento do pêndulo',
-              origin: 'Posição na origem',
-              photodiode: 'Posição do fotodiodo'
+              ori_pos: 'Posição na origem',
+              photo_pos: 'Posição do fotodiodo'
             }
           }
         }
