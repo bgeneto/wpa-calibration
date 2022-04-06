@@ -140,4 +140,18 @@ $(document).ready(function () {
     ev.preventDefault();
     sendMessage({ 'data': 'go to origin 2 2' });
   });
+
+  // move forward
+  $("#move_forward").click(function (ev) {
+    ev.preventDefault();
+    sendMessage({ 'data': 'move forward 40 2 2' });
+  });
+
+
+  // move to photodiode
+  $("#move_photodiode").click(function (ev) {
+    ev.preventDefault();
+    sendMessage({ 'data': 'move to photodiode 2 2' });
+  });
+
 });

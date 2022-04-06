@@ -148,16 +148,21 @@
                 <div class="input-style-1">
                   <label for="pulley" class="uppercase" data-i18n="cal.pulley"></label>
                   <input type="number" id="pulley" data-i18n="[placeholder]cal.pulley" />
+                  <button id="move_forward" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="command: move forward 40 2 2">move forward</button>
                 </div>
                 <div class="input-style-1">
                   <label for="photo_pos" class="uppercase" data-i18n="cal.photo_pos"></label>
                   <input type="number" id="photo_pos" data-i18n="[placeholder]cal.photo_pos" />
+                  <button id="move_photodiode" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="command: move to photodiode 2 2">move to photodiode</button>
                 </div>
               </div>
               <div class="mb-3">
                 <div class="button-group d-flex justify-content-left flex-wrap">
                   <button id="cal1_send" type="submit" class="btn btn-primary" data-i18n="command.button"></button>
-                  <button id="cal1_clear" type="button" class="btn btn-warning" data-i18n="data.button"></button>
+                  &nbsp;&nbsp;<button id="cal1_clear" type="button" class="btn btn-warning"
+                    data-i18n="data.button"></button>
                 </div>
               </div>
             </div>
@@ -253,7 +258,7 @@
       return new bootstrap.Tooltip(tooltipTriggerEl)
     });
     $('#cal1_clear').click(function () {
-      $('#form-sent').reset();
+      $('#form-sent')[0].reset();
       $("#alert-msg").attr("style", "display:none");
       $("#ok-msg").attr("style", "display:none");
     });
