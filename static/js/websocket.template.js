@@ -64,6 +64,7 @@ $(document).ready(function () {
       $("#alert-msg-text").html(err_msg);
       $("#alert-msg").attr("style", "display:block");
     } else {
+      $("#alert-msg-text").html(err_msg);
       $("#alert-msg").attr("style", "display:none");
     }
     console.log(err_msg);
