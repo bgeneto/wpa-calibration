@@ -49,7 +49,8 @@ $(function () {
               label: 'Send Command',
               placeholder: 'Type your command here...',
               button: 'Send',
-              err: 'The following commands failed, please try again:'
+              err: 'The following commands failed, please try again:',
+              sent: 'All commands sent to PIC. Please confirm that all operations succeeded!'
             },
             menu: {
               pages: 'Pages',
@@ -94,7 +95,8 @@ $(function () {
               label: 'Enviar Comando',
               placeholder: 'Digite seu comando aqui...',
               button: 'Enviar',
-              err: 'Os seguintes comandos falharam, tente novamente:'
+              err: 'Os seguintes comandos falharam, tente novamente:',
+              sent: 'Todos os comandos foram enviados. Favor confirmar que todas as operações foram realizadas com sucesso!'
             },
             menu: {
               pages: 'Páginas',

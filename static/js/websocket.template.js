@@ -103,7 +103,20 @@ $(document).ready(function () {
       cmd = 'set pendulum length ' + parseFloat(length.trim());
       calibrate(cmd, 'pendulum length');
     }
-    $('#exampleModal').modal('show');
+
+    let photo_pos = $('#photo_pos').val();
+    if (photo_pos) {
+      cmd = 'set photodiode position ' + parseFloat(photo_pos.trim());
+      calibrate(cmd, 'photodiode position');
+    }
+
+    let ori_pos = $('#ori_pos').val();
+    if (ori_pos) {
+      cmd = 'set origin position ' + parseFloat(ori_pos.trim());
+      calibrate(cmd, 'origin position');
+    }
+
+    $('#cmdModal').modal('show');
   });
 
   // goto origin
