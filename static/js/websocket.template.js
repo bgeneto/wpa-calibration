@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var err_msg = '';
+  var err_msg = '<span data-i18n="command.err"></span><br>';
   var received = $('#received');
   var socket = new WebSocket("ws://<web_ip>:<web_port>/ws");
 
@@ -55,7 +55,7 @@ $(document).ready(function () {
       await asleep(500);
       data = received.val();
     }
-    err_msg += '•' + cmd + ' command FAILED!<br>';
+    err_msg += '•' + cmd + '<br>';
     $( "#alert-msg" ).html(err_msg);
     $( "#alert-msg" ).attr("style", "display:block");
     console.log(err_msg);

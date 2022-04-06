@@ -48,7 +48,8 @@ $(function () {
             command: {
               label: 'Send Command',
               placeholder: 'Type your command here...',
-              button: 'Send'
+              button: 'Send',
+              err: 'The following commands failed, please try again:'
             },
             menu: {
               pages: 'Pages',
@@ -92,7 +93,8 @@ $(function () {
             command: {
               label: 'Enviar Comando',
               placeholder: 'Digite seu comando aqui...',
-              button: 'Enviar'
+              button: 'Enviar',
+              err: 'Os seguintes comandos falharam, tente novamente:'
             },
             menu: {
               pages: 'Páginas',
