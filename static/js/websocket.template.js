@@ -44,23 +44,29 @@ $(document).ready(function () {
     wt = 500; // wait time in ms
     sendMessage({ 'data': cmd });
     let regex = new RegExp(str.toUpperCase().trim() + ".+OK$", "m");
-    console.log(regex);
     let data = received.val();
     let timeout = 0;
+    let ok = false;
     while (timeout < 30) {
       timeout += 1;
       if (regex.test(data)) {
-        received.val('');
-        return true;
+        ok = true;
+        break;
+      } else {
+        console.log(regex);
+        console.log(data);
       }
       await asleep(wt);
       data = received.val();
     }
-    err_msg += '• ' + cmd + '<br>';
-    $("#alert-msg-text").html(err_msg);
-    $("#alert-msg").attr("style", "display:block");
+    if (!ok) {
+      err_msg += '• ' + cmd + '<br>';
+      $("#alert-msg-text").html(err_msg);
+      $("#alert-msg").attr("style", "display:block");
+    } else {
+      $("#alert-msg").attr("style", "display:none");
+    }
     console.log(err_msg);
-    return false;
   }
 
   $("#cal1_send").click(function (ev) {
@@ -81,7 +87,7 @@ $(document).ready(function () {
       cmd = 'set maximum position ' + parseFloat(max_pos.trim());
       calibrate(cmd, 'maximum position');
     }
-  sleep(200);
+    sleep(200);
 
     let vert_pos = $('#vert_pos').val();
     if (vert_pos) {
